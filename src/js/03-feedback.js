@@ -42,13 +42,13 @@ function populateForm() {
   }
 }
 
-function onFormSubmit(evt) {
-  evt.preventDefault();
+function onFormSubmit(event) {
+  event.preventDefault();
 
   if (refs.userEmail.value && refs.userMessage.value) {
-    localStorage.clear();
-    evt.currentTarget.reset();
+    event.currentTarget.reset();
     console.log(formData);
+    localStorage.removeItem(STORAGE_KEY);
     formData = {
       email: '',
       message: '',
